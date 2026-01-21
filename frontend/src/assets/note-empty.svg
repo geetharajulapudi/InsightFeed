@@ -1,0 +1,23 @@
+<svg
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Note background (light grey) -->
+  <path
+    d="M4 2C2.89543 2 2 2.89543 2 4V20C2 21.1046 2.89543 22 4 22H14L20 16V4C20 2.89543 19.1046 2 18 2H4Z"
+    fill="#E5E7EB" />
+
+  <!-- Folded corner (darker grey) -->
+  <path
+    d="M14 22V16H20L14 22Z"
+    fill="#9CA3AF" />
+
+  <!-- Note lines (even darker grey) -->
+  <rect x="6" y="6" width="12" height="2" rx="1" fill="#6B7280"/>
+  <rect x="6" y="10" width="10" height="2" rx="1" fill="#6B7280"/>
+  <rect x="6" y="14" width="8" height="2" rx="1" fill="#6B7280"/>
+</svg>
+

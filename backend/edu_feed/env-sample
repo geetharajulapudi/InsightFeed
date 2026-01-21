@@ -1,0 +1,9 @@
+BASE_URL = "your url"
+API_KEY = "your api key generated in GuardianAPI.com"
+
+DATABASE_USER = "your_database_user"
+DATABASE_PASSWORD = "your_database_password"
+DATABASE_NAME = "your_database_name"
+DATABASE_HOST = "localhost"
+DATABASE_PORT = 5432
+

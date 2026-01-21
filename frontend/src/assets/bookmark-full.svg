@@ -1,0 +1,18 @@
+<svg
+  width="32"
+  height="32"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Base shape (dark red) -->
+  <path
+    d="M6 4C6 2.89543 6.89543 2 8 2H16C17.1046 2 18 2.89543 18 4V22L12 18L6 22V4Z"
+    fill="#DC2626" />
+  
+  <!-- Accent strip (lighter red) -->
+  <path
+    d="M12 2V18L18 22V4C18 2.89543 17.1046 2 16 2H12Z"
+    fill="#F87171" />
+</svg>
+
