@@ -72,28 +72,31 @@ INSIGHTFEED/
 │
 ├── backend/                         # Django backend
 │   └── edu_feed/
-│       ├── edu_feed/                # Django project settings
-│       │   ├── __init__.py
-│       │   ├── asgi.py
-│       │   ├── settings.py
-│       │   ├── urls.py
-│       │   └── wsgi.py
-│       │
-│       ├── feed/                    # News feed application
-│       │   ├── migrations/
-│       │   ├── serializers/         # DRF serializers
-│       │   ├── views/               # API views
-│       │   ├── __init__.py
-│       │   ├── admin.py
-│       │   ├── apps.py
-│       │   ├── models.py
-│       │   └── tests.py
-│       │
-│       ├── .env                     # Backend environment variables
-│       ├── env-sample               # Sample env file
-│       ├── db.sqlite3               # Local database
-│       ├── manage.py
-│       └── requirement.txt
+│   │    ├── edu_feed/                # Django project settings
+│   │    │   ├── __init__.py
+│   │    │   ├── asgi.py
+│   │    │   ├── settings.py
+│   │    │   ├── urls.py
+│   │    │   └── wsgi.py
+│   │    │
+│   │    ├── feed/                    # News feed application
+│   │    │   ├── migrations/
+│   │    │   ├── serializers/         # DRF serializers
+│   │    │   ├── views/               # API views
+│   │    │   ├── __init__.py
+│   │    │   ├── admin.py
+│   │    │   ├── apps.py
+│   │    │   ├── models.py
+│   │    │   └── tests.py
+│   │    │
+│   │    ├── .env                     # Backend environment variables
+│   │    ├── env-sample               # Sample env file
+│   │    ├── db.sqlite3               # Local database
+│   │    └── manage.py
+│   │
+│   ├── env   # python virtual environment
+│   │
+│   └── requirement.txt    
 │
 ├── frontend/                        # React frontend (Vite)
 │   ├── public/
@@ -123,8 +126,7 @@ INSIGHTFEED/
 │   ├── package-lock.json
 │   ├── yarn.lock
 │   └── README.md
-│
-├── env/                             # Python virtual environment
+│                            
 ├── .gitignore
 ```
 
