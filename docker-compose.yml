@@ -1,0 +1,58 @@
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres
+    environment:
+      - POSTGRES_DB=${DATABASE_NAME}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USER} -d ${DATABASE_NAME}"]
+      interval: 5s
+      retries: 5
+    ports:
+      - "5433:5432"
+    networks:
+      - insightfeed_network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+    - ./backend/.env
+    container_name: insightfeed_backend
+    command: sh -c "sleep 10 && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    # environment:
+    #   - DATABASE_HOST=postgres
+    #   - DATABASE_PORT=5432
+    #   - DATABASE_NAME=${DATABASE_NAME}
+    #   - DATABASE_USER=${DATABASE_USER}
+    #   - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+    networks:
+      - insightfeed_network
+
+  frontend: 
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: insightfeed_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - insightfeed_network
+
+networks:
+  insightfeed_network:
+    
+
+
+
