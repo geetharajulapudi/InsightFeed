@@ -9,9 +9,6 @@ class BookmarkViewSet(viewsets.ModelViewSet):
     serializer_class = BookmarkSerializer
 
     def get_queryset(self):
-        """
-        Return bookmarks for the logged-in user that are not soft-deleted.
-        """
         user_uuid = self.kwargs["user_uuid"]
         return Bookmark.objects.filter(
             user__uuid=user_uuid,
@@ -23,7 +20,7 @@ class BookmarkViewSet(viewsets.ModelViewSet):
         Automatically assign the bookmark to the logged-in user.
         """
         user_uuid = self.kwargs["user_uuid"]
-        user = User.objects.get(uuid=user_uuid)
+        user, _ = User.objects.get_or_create(uuid=user_uuid)
         serializer.save(user=user)
 
     def perform_destroy(self, instance):
