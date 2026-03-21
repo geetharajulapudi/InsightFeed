@@ -3,7 +3,7 @@ FROM python:3.12-slim AS builder
 
 ENV PYTHONBUFFERED=1
 
-ENV PYTHONPATH=/app/edu_feed   # 🔥 IMPORTANT FIX
+ENV PYTHONPATH=/app/edu_feed  
 
 COPY requirement.txt .
 
@@ -26,4 +26,4 @@ EXPOSE 10000
 
 WORKDIR /app/edu_feed/
 
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:10000"]
+CMD ["gunicorn", "edu_feed.wsgi:application", "--bind", "0.0.0.0:10000"]
