@@ -25,5 +25,5 @@ uritemplate==4.2.0
 urllib3==2.5.0
 uuid==1.30
 gunicorn==22.0
-dj-database-ur
-psycopg2-binary
+dj-database-url==3.0.1
+psycopg2-binary==2.9.11
