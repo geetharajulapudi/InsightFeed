@@ -2,8 +2,9 @@
 FROM python:3.12-slim AS builder
 
 ENV PYTHONBUFFERED=1
+ENV PYTHONPATH=/app/edu_feed
 
-ENV PYTHONPATH=/app/edu_feed  
+WORKDIR /app
 
 COPY requirement.txt .
 
