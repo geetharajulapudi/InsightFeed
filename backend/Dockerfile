@@ -24,4 +24,4 @@ EXPOSE 8000
 
 WORKDIR /app/edu_feed/
 
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn", "edu_feed.wsgi:application", "--bind", "0.0.0.0:10000"]
