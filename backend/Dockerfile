@@ -28,4 +28,4 @@ EXPOSE 10000
 WORKDIR /app/edu_feed/
 
 # CMD ["gunicorn", "edu_feed.wsgi:application", "--bind", "0.0.0.0:10000"]
-CMD ["sh", "-c", "python manage.py migrate && gunicorn edu_feed.wsgi:application --bind 0.0.0.0:10000"]
+CMD ["sh", "-c", "python manage.py collectstatic --noinput && python manage.py migrate && gunicorn edu_feed.wsgi:application --bind 0.0.0.0:10000"]
