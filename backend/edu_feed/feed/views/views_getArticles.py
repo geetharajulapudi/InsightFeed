@@ -26,7 +26,7 @@ class ExternalArticlesView(APIView):
         """Make the external API request and process the response."""
         try:
             response = requests.get(BASE_URL, params=params)
-            response.rapiaise_for_status()
+            response.raise_for_status()
 
             data = response.json()
             results = data.get("response", {}).get("results", [])
