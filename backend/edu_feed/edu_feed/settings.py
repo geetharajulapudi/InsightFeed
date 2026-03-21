@@ -37,9 +37,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CORS_ALLOWED_ORIGINS = [
-    "https://your-app.vercel.app",
-]
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",

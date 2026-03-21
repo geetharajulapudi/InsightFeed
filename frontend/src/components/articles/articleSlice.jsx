@@ -2,20 +2,45 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import api from "../../api/api";
 
 //Fetch Home page Articles using createAsyncThunk middlware for asynchronous actions.
+// export const fetchArticles = createAsyncThunk(
+//   "articles/fetchArticles",
+
+//   //function to fetch articles from the backend API, optionally with a search query.
+//   async (query = '', { rejectWithValue }) => {
+//     try {
+
+//       //encodeURIComponent ensures that special characters in the query are properly handled.
+//       const url = query ? `/api/articles/?q=${encodeURIComponent(query)}` : "/api/articles/";
+//       const res = await api.get(url);
+
+//       //returns articles along with search metadata to backend.
+//       return { articles: res.data, isSearch: !!query, searchQuery: query };
+//     } catch (err) {
+//       return rejectWithValue(err.response?.data || err.message);
+//     }
+//   }
+// );
+
+// Fetch Home page Articles using createAsyncThunk middleware for asynchronous actions.
 export const fetchArticles = createAsyncThunk(
   "articles/fetchArticles",
 
-  //function to fetch articles from the backend API, optionally with a search query.
-  async (query = '', { rejectWithValue }) => {
+  // Function to fetch articles from the backend API, optionally with a search query.
+  async (query = "", { rejectWithValue }) => {
     try {
+      // Use backend URL from api.js
+      // Append query if exists
+      const url = query
+        ? `/api/articles/?q=${encodeURIComponent(query)}`
+        : "/api/articles/";
 
-      //encodeURIComponent ensures that special characters in the query are properly handled.
-      const url = query ? `/api/articles/?q=${encodeURIComponent(query)}` : "/api/articles/";
+      // Make request to backend
       const res = await api.get(url);
 
-      //returns articles along with search metadata to backend.
+      // Return articles along with search metadata
       return { articles: res.data, isSearch: !!query, searchQuery: query };
     } catch (err) {
+      // Proper error handling
       return rejectWithValue(err.response?.data || err.message);
     }
   }
