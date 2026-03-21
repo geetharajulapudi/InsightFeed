@@ -1,0 +1,25 @@
+@media (max-width: 900px) {
+  .feed-grid3,
+  .feed-grid4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-areas: unset !important;
+    height: auto !important;
+  }
+  .feed-grid3 > div,
+  .feed-grid4 > div {
+    grid-area: unset !important;
+    height: 200px;
+  }
+}
+
+@media (max-width: 560px) {
+  .feed-grid3,
+  .feed-grid4 {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+  }
+  .feed-grid3 > div,
+  .feed-grid4 > div {
+    height: 220px;
+  }
+}

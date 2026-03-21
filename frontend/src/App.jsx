@@ -3,10 +3,9 @@ import Home from "./pages/home.jsx";
 import Navbar from "./components/navbar/navbar.jsx";
 import Bookmarks from "./pages/Bookmarks.jsx";
 import ExpandedArticle from "./components/ExpandedCard/ExpandedArticle.jsx";
+import NotFound from "./pages/NotFound.jsx";
 
 function App() {
-
-  // Main App component that sets up routing and layout for the application.
   return (
     <div style={styles.app}>
       <Navbar />
@@ -14,10 +13,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/bookmarks" element={<Bookmarks />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-
-      {/* ExpandedArticle component to show the detailed view of an article. */}
       <ExpandedArticle />
     </div>
   );
@@ -26,7 +24,7 @@ function App() {
 const styles = {
   app: {
     height: "100vh",
-    backgroundColor: "#000", 
+    backgroundColor: "#000",
     color: "#fff",
     display: "flex",
     flexDirection: "column",
@@ -35,7 +33,8 @@ const styles = {
   content: {
     flex: 1,
     overflowY: "auto",
-    padding: "20px",
+    padding: "0",
+    minHeight: 0,
   },
 };
 export default App;
