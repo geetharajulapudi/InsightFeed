@@ -68,7 +68,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "https://insightfeedapp.vercel.app",
 ]
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'edu_feed.urls'
 
