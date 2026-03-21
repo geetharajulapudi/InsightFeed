@@ -36,8 +36,8 @@ Thumbs.db
 !**/migrations/__init__.py
 
 #Settings.py 
-**/settings.py
-*/settings.py
+# **/settings.py
+# */settings.py
 
 **/postgres_data
 *//postgres_data

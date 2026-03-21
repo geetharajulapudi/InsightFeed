@@ -3,7 +3,7 @@ FROM python:3.12-slim AS builder
 
 ENV PYTHONBUFFERED=1
 
-WORKDIR /app
+ENV PYTHONPATH=/app/edu_feed   # 🔥 IMPORTANT FIX
 
 COPY requirement.txt .
 
@@ -13,6 +13,8 @@ COPY . .
 
 #stage2 image
 FROM python:3.12-slim
+
+ENV PYTHONPATH=/app/edu_feed
 
 WORKDIR /app
 
