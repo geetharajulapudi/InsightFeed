@@ -63,7 +63,7 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://insightfeedapp.vercel.app",
+    "https://newsfeed-pearl.vercel.app/",
 ]
 CORS_ALLOW_ALL_ORIGINS = True
 
