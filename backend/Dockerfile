@@ -1,23 +1,27 @@
-# stage1 builder
-FROM python:3.11-slim AS builder
+#stage1 builder
+FROM python:3.12-slim AS builder
 
-ENV PYTHONUNBUFFERED=1
+ENV PYTHONBUFFERED=1
 
 WORKDIR /app
 
 COPY requirement.txt .
-RUN pip install --no-cache-dir --prefix=/install -r requirement.txt
 
-COPY . .
+RUN pip3 install --no-cache-dir --prefix=/install -r requirement.txt
 
-# stage2 image
-FROM python:3.11-slim
+COPY . . 
+
+#stage2 image
+FROM python:3.12-slim
 
 WORKDIR /app
 
 COPY --from=builder /install /usr/local/
+
 COPY --from=builder /app /app
 
 EXPOSE 10000
 
-CMD ["gunicorn", "edu_feed.wsgi:application", "--bind", "0.0.0.0:10000"]
+WORKDIR /app/edu_feed/
+
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:10000"]
