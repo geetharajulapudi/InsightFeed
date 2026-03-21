@@ -63,9 +63,11 @@ MIDDLEWARE = [
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://newsfeed-pearl.vercel.app/",
+    "https://newsfeed-pearl.vercel.app",
 ]
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"https://.*\.vercel\.app",
+]
 
 ROOT_URLCONF = 'edu_feed.urls'
 
