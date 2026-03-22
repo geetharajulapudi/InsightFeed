@@ -128,8 +128,8 @@ function Block3({ articles, isBookmarkPage }) {
   );
 }
 
-const GAP = 18; // gap between articles inside a block
-const BLOCK_GAP = 36; // gap between blocks
+const GAP = 24; // gap between articles inside a block
+const BLOCK_GAP = 24; // gap between blocks
 
 const styles = {
   wrapper: {
