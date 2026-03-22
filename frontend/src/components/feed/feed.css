@@ -23,3 +23,19 @@
     height: 220px;
   }
 }
+
+/* Navbar mobile fix */
+@media (max-width: 640px) {
+  .navbar-inner {
+    height: auto !important;
+    flex-wrap: wrap !important;
+    padding: 10px 16px !important;
+    gap: 8px !important;
+  }
+  .navbar-inner > div.search-wrap {
+    order: 3;
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+}

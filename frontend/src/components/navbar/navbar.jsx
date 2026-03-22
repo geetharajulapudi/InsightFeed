@@ -24,26 +24,18 @@ const Navbar = () => {
 
   return (
     <header style={styles.navbar}>
-      <div style={styles.inner}>
+      <div style={styles.inner} className="navbar-inner">
 
         {/* Logo */}
         <Link to="/" style={styles.logo}>
           <div style={styles.logoMark}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#lg)" stroke="none"/>
-              <defs>
-                <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#818cf8"/>
-                  <stop offset="100%" stopColor="#a78bfa"/>
-                </linearGradient>
-              </defs>
-            </svg>
+            <img src="/news.png" alt="logo" style={{ width: 26, height: 26, objectFit: "contain" }} />
           </div>
           <span style={styles.logoText}>InsightFeed</span>
         </Link>
 
         {/* Search */}
-        <div style={{ ...styles.searchBox, ...(focused ? styles.searchBoxFocused : {}) }}>
+        <div className="search-wrap" style={{ ...styles.searchBox, ...(focused ? styles.searchBoxFocused : {}) }}>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#bdbdde" strokeWidth="2.5" style={{ flexShrink: 0 }}>
             <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
           </svg>
@@ -109,8 +101,8 @@ const styles = {
     textDecoration: "none",
   },
   logoMark: {
-    width: "30px",
-    height: "30px",
+    width: "36px",
+    height: "36px",
     borderRadius: "8px",
     background: "linear-gradient(135deg, #312e81, #4c1d95)",
     display: "flex",
